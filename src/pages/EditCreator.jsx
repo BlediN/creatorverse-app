@@ -18,6 +18,7 @@ const EditCreator = () => {
 
   useEffect(() => {
     fetchCreator();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchCreator = async () => {
