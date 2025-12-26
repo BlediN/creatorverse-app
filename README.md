@@ -37,7 +37,7 @@ npm install
 
 1. Create a free account at [Supabase](https://supabase.com)
 2. Create a new project
-3. In the SQL Editor, run the following query to create the `creators` table:
+3. In the SQL Editor, run the SQL script from `database-setup.sql` file to create the table and insert sample creators, or run the queries manually as shown below:
 
 ```sql
 CREATE TABLE creators (
