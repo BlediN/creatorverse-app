@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../client';
 import CreatorCard from '../components/CreatorCard';
-import { Link } from 'react-router-dom';
 
 const ShowCreators = () => {
   const [creators, setCreators] = useState([]);
@@ -16,7 +15,7 @@ const ShowCreators = () => {
   }, []);
 
   return (
-    <section>
+    <section className="creators-section">
       <h1>✨ Creatorverse</h1>
 
       {creators.length === 0 ? (

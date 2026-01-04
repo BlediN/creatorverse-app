@@ -4,14 +4,25 @@ const CreatorCard = ({ creator }) => {
   return (
     <div className="creator-card">
       <article>
-        {creator.imageURL && (
-          <img src={creator.imageURL} alt={creator.name} />
-        )}
+          <div className="card-image">
+            <img
+              src={creator.imageURL}
+              alt={creator.name}
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/400x250?text=No+Image';
+              }}
+            />
+          </div>
 
         <h3>{creator.name}</h3>
-        <p>{creator.description}</p>
+        <p className="description">{creator.description}</p>
 
-        <a href={creator.url} target="_blank" role="button" className="secondary">
+        <a
+          href={creator.url}
+          target="_blank"
+          role="button"
+          className="secondary"
+        >
           Visit Channel
         </a>
 

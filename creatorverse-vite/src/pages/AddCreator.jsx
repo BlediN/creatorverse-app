@@ -22,12 +22,51 @@ const AddCreator = () => {
     <form onSubmit={handleSubmit}>
       <h2>Add Creator</h2>
 
-      <input placeholder="Name" onChange={e => setForm({ ...form, name: e.target.value })} />
-      <input placeholder="URL" onChange={e => setForm({ ...form, url: e.target.value })} />
-      <textarea placeholder="Description" onChange={e => setForm({ ...form, description: e.target.value })} />
-      <input placeholder="Image URL" onChange={e => setForm({ ...form, imageURL: e.target.value })} />
+      <div className="floating-field">
+        <input
+          id="name"
+          placeholder=" "
+          required
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+        />
+        <label htmlFor="name">Name*</label>
+      </div>
 
-      <button type="submit">Add</button>
+      <div className="floating-field">
+        <input
+          id="url"
+          required
+          placeholder=" "
+          value={form.url}
+          onChange={(e) => setForm({ ...form, url: e.target.value })}
+        />
+        <label htmlFor="url">Channel URL*</label>
+      </div>
+
+      <div className="floating-field">
+        <textarea
+          id="description"
+          required
+          placeholder=" "
+          value={form.description}
+          onChange={(e) => setForm({ ...form, description: e.target.value })}
+        />
+        <label htmlFor="description">Description*</label>
+      </div>
+
+      <div className="floating-field">
+        <input
+          id="imageURL"
+          placeholder=" "
+          value={form.imageURL}
+          onChange={(e) => setForm({ ...form, imageURL: e.target.value })}
+        />
+        <label htmlFor="imageURL">Image URL (optional)</label>
+      </div>
+
+      <button type="submit">Add Creator</button>
+      <button type="button" className="secondary" onClick={() => navigate(-1)}>Cancel</button>
     </form>
   );
 };

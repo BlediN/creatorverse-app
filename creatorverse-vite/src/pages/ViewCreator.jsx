@@ -23,14 +23,36 @@ const ViewCreator = () => {
   if (!creator) return <p>Loading...</p>;
 
   return (
-    <div>
+    <section className="view-creator">
       <h2>{creator.name}</h2>
-      <p>{creator.description}</p>
-      <a href={creator.url} target="_blank">Visit Channel</a>
 
-      <br />
-      <Link to={`/edit/${id}`}>Edit</Link>
-    </div>
+      {/* ✅ IMAGE */}
+      {creator.imageURL && (
+        <img
+          src={creator.imageURL}
+          alt={creator.name}
+          className="view-creator-image"
+        />
+      )}
+
+      <p>{creator.description}</p>
+
+      <a
+        href={creator.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        role="button"
+        className="secondary"
+      >
+        Visit Channel
+      </a>
+
+      <br /><br />
+
+      <Link to={`/edit/${creator.id}`}>Edit</Link>
+      {' | '}
+      <Link to="/">Back</Link>
+    </section>
   );
 };
 
