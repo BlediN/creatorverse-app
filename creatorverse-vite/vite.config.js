@@ -13,5 +13,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/creatorverse-app/',   // <-- IMPORTANT
+  base: '/CREATOR/creatorverse-app/',   // <-- IMPORTANT
 })
